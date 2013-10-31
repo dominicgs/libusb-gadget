@@ -28,12 +28,7 @@
 #include <stdint.h>
 #include <stdarg.h>
 #include <errno.h>
-#include "config.h"
-#if HAVE_LINUX_USB_SUBDIR
 #include <linux/usb/gadgetfs.h>
-#else
-#include <linux/usb_gadgetfs.h>
-#endif
 #include "usb-gadget.h"
 #include "list.h"
 

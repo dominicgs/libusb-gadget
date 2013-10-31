@@ -9,12 +9,7 @@
 
 #include <errno.h>
 #include <string.h>
-#include "config.h"
-#if HAVE_LINUX_USB_SUBDIR
 #include <linux/usb/ch9.h>
-#else
-#include <linux/usb_ch9.h>
-#endif
 #include "usb-gadget.h"
 
 static inline void put_unaligned_le16(uint16_t val, uint16_t *cp)
