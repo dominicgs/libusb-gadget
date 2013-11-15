@@ -714,6 +714,7 @@ usb_gadget_handle_control_event (usb_gadget_dev_handle *handle)
 	  break;
 	}
     }
+  return 0;
 }
 
 ssize_t

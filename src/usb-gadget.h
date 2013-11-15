@@ -19,6 +19,10 @@
 #ifndef __USG_H
 #define __USG_H
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 #include <endian.h>
 #include <stdint.h>
 #include <unistd.h>
@@ -98,5 +102,9 @@ void usb_gadget_set_event_cb (usb_gadget_dev_handle *, usb_gadget_event_cb, void
 void usb_gadget_set_debug_level (usb_gadget_dev_handle *, int);
 int usb_gadget_handle_control_event (usb_gadget_dev_handle *);
 int usb_gadget_control_fd (usb_gadget_dev_handle *);
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif
