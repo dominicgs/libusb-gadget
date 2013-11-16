@@ -17,10 +17,15 @@
 # the Free Software Foundation, Inc., 51 Franklin Street,
 # Boston, MA 02110-1301, USA.
 
-CROSS_COMPILE ?= /opt/gcc-linaro-arm-linux-gnueabihf/bin/arm-linux-gnueabihf-
-
-CC = $(CROSS_COMPILE)gcc
-CXX = $(CROSS_COMPILE)g++
+PLATFORM = $(shell uname -m)
+ifneq ($(PLATFORM), armv7l)
+        CROSS_COMPILE ?= /opt/gcc-linaro-arm-linux-gnueabihf/bin/arm-linux-gnueabihf-
+        CC = $(CROSS_COMPILE)gcc
+        CXX = $(CROSS_COMPILE)g++
+else
+        CC = /usr/bin/gcc
+        CXX = /usr/bin/g++
+endif
 
 INSTALL ?= /usr/bin/install
 LDCONFIG ?= /sbin/ldconfig
