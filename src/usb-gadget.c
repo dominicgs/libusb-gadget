@@ -111,7 +111,7 @@ find_ep0 (struct usb_gadget_dev_handle *handle)
     "goku_udc",
     "sh_udc",
     "omap_udc",
-    "musb_hdrc",
+    "musb-hdrc",
     "at91_udc",
     "lh740x_udc",
     "atmel_usba_udc",
@@ -637,10 +637,10 @@ setup (struct usb_gadget_dev_handle *handle, struct usb_ctrlrequest *ctrl)
 	      debug (handle, 2, "libusb-gadget: setup: clear halt %s %d %d\n",
 		     ep->ep.name, ep->fd, ret);
 	      if (ep->fd > 0
-		  /* FIXME: dummy_udc and musb_hdrc don't return from
+		  /* FIXME: dummy_udc and musb-hdrc don't return from
 		     this ioctl */
 		  && (strcmp (handle->ep0->ep.name, "dummy_udc")
-		      || strcmp (handle->ep0->ep.name, "musb_hdrc"))
+		      || strcmp (handle->ep0->ep.name, "musb-hdrc"))
 		  && ioctl (ep->fd, GADGETFS_CLEAR_HALT) < 0)
 		ret = -1;
 	    }

@@ -22,12 +22,8 @@
 #include <stdint.h>
 #include <fcntl.h>
 #include <getopt.h>
-#include "config.h"
-#if HAVE_LINUX_USB_SUBDIR
+//#include "config.h"
 #include <linux/usb/ch9.h>
-#else
-#include <linux/usb_ch9.h>
-#endif
 #include <usb-gadget.h>
 
 /* /dev/gadget/ep* doesn't support poll, we have to use an alternative
